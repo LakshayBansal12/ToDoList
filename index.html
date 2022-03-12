@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple To Do</title>
+</head>
+<body>
+    <div class="bighero">
+    <div class="hero">
+        <h1>To Do List</h1>
+    </div>
+    <div class="date">
+        <p>Current Date and Time is <span id='date-time'></span>.</p>
+    </div>
+</div>
+    <div class="container">
+        <div class="col">
+            <form action="">
+                <h1>Today</h1>
+                <div class="input">
+                    <input class="textinput" type="text" id="myInputt" name="today" placeholder="Enter Task" >
+                    <!-- <textarea name="message" id="message" cols="30" rows="10"></textarea> -->
+                    <span onclick="newElementt()" class="addBtn"><img src="new/newplus.svg" class="plus"></span>
+                    </div>
+                    <ul id="myULt">
+                        
+                      </ul>
+            </form>    
+        </div>
+        <div class="col">
+            <form action="">
+                <h1>Tomorrow</h1>
+                <div class="input">
+                <input class-="textinput" type="text" id="myInputT" name="today" placeholder="Enter Task">
+                <span onclick="newElementT()" class="addBtn"><img src="new/newplus.svg" class="plus"></span> 
+                </div>
+                <ul id="myULT">
+                    
+                  </ul>
+            </form>    
+        </div>
+        <div class="col">
+            
+            <form action="">
+                <h1>Eventually</h1>
+                <div class="input">
+                    <input class-="textinput" type="text" id="myInpute" name="today" cols="10" placeholder="Enter Task">
+                    <span onclick="newElemente()" class="addBtn"><img src="new/newplus.svg" class="plus"></span>
+                    </div>
+                    <ul id="myULe">
+                        
+                      </ul>
+            </form>    
+        </div>
+
+    </div>
+</body>
+<script>
+    var dt = new Date();
+    document.getElementById('date-time').innerHTML=dt;
+    
+    function newElementt() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInputt").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myULt").appendChild(li);
+  }
+  document.getElementById("myInputt").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  //span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }}
+}
+    function newElementT() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInputT").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myULT").appendChild(li);
+  }
+  document.getElementById("myInputT").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  //span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }}
+}
+    function newElemente() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInpute").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myULe").appendChild(li);
+  }
+  document.getElementById("myInpute").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  //span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }}
+
+    
+}
+  
+
+</script>
+<style>
+    .bighero{
+        font-size: xx-large;
+    }
+    body{
+        margin: 5em;
+        /* background-position: center; */
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-color: rgba(141, 146, 114, 0.527);
+        background-image: url(back.jpg);
+    }
+    .hero{
+        margin: 0em 1em;
+    }
+    .date{
+        margin: 0em 1em;
+    }
+    h1{
+        margin-bottom: 0em;
+        padding-bottom: 0;
+    }
+    h3{
+        margin-top: 0;
+        padding-top: 0;
+    }
+    h2{
+        font-size: x-large;
+        padding-top: 0;
+    }
+    p{
+        color: rgb(12, 11, 11);
+    }
+    .col{
+        /* font-size: 5em; */
+        font-weight: bold;
+        color: rgb(2, 6, 10);
+        text-align:center;
+        /* background-color: rgba(196, 230, 9, 0.418); */
+        /* background-color: #fff; */
+    /* background-color: rgba(255,255,255,0.5) */
+        border-color: green;
+        border: 0.4em solid green;
+        border-top-left-radius: 1.6em;
+        border-top-right-radius: 1.6em;
+        border-bottom-right-radius: 10em;
+        border-bottom-left-radius: 1.6em;
+        margin: 1em;
+        padding: .5em;
+        float: left;
+        width: 24em;
+        height: 50em;
+        
+    }
+    input{
+        margin: 1em 0;
+        border: none;
+        border-radius: 0;
+        width: 75%;
+        padding: 10px;
+        /* float:  */
+        font-size: 16px;
+        background-color: antiquewhite;
+    }
+
+    img{
+        padding-left: 0.7em;
+        margin-bottom: -0.5em;
+        width: 8%;
+    }
+    .plus{
+        cursor: pointer;
+    }
+    #today{
+        width: 16em;
+    }
+    li{
+        color: black;
+        background-color: antiquewhite;
+        margin: 1em 0;
+        border: none;
+        border-radius: 0;
+        width: 75%;
+        padding: 10px;
+    }
+</style>
+</html>
